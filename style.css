@@ -1,0 +1,215 @@
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 1em;
+  background-color: #fff;
+  border-bottom: 2px solid #ddd;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  padding: 0.5em 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-family: 'DM Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  color: #005599;
+}
+
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.intro {
+  text-align: justify;
+}
+
+.topic-title {
+  color: var(--topic-color);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
+}
+
+.video-list {
+  list-style: none;
+  padding-left: 1em;
+  margin-bottom: 1.5em;
+}
+
+.video-list li {
+  margin: 0.3em 0;
+}
+
+.video-list li a {
+  text-decoration: none;
+  color: var(--topic-color);
+  font-weight: 500;
+}
+
+.video-list li a:hover {
+  text-decoration: underline;
+}
+
+.sim-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 2em auto;
+  max-width: 700px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sim-thumb {
+  height: 150px; /* fixed height */
+  width: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+
+.sim-link {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: #0077cc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.sim-link:hover {
+  color: #005599;
+}
+
+.hero-banner {
+  background-color: white;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center; /* centers the entire wrapper */
+}
+
+.hero-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* distance between image and text */
+  width: 680px;
+  max-width: 90vw;
+  overflow: hidden
+}
+
+.hero-image {
+  height: 230px;
+  width: auto;
+}
+
+.hero-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4em;
+  color: black;
+  margin: 0;
+  margin-top: -40px;
+}
+
+.hero-title h1,
+h2, h3 {
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  font-style: italic;
+}
+
+.topic-card {
+  display: flex;
+  background-color: #fdfdfd;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: 1rem;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.topic-thumb {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.topic-content h4 {
+  margin-top: 0;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: var(--topic-color, #333);
+}
+
+.topic-content ul {
+  list-style-type: disc;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+details summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  font-family: inherit;
+  font-size: 0.8em;
+  font-weight: bold; /* Optional: match your headers */
+  color: inherit;
+  padding: 0.5em 0;
+}
+
+details summary::-webkit-details-marker {
+  display: none; /* Hides default arrow */
+}
+
+/* Optional: custom arrow */
+details summary::before {
+  content: "▶"; /* Closed state arrow */
+  display: inline-block;
+  margin-right: 0.5em;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg); /* Open state arrow */
+}
+
