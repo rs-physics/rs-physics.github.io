@@ -97,6 +97,11 @@ main {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
+.sim-card > div {
+  min-width: 200px;
+  flex: 1;
+}
+
 .sim-thumb {
   height: 150px; /* fixed height */
   width: auto;
@@ -137,12 +142,18 @@ main {
   width: auto;
 }
 
+.hero-title {
+  min-width: 0;
+  flex-shrink: 1;
+}
+
 .hero-title h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 6vw, 4em);
   color: black;
   margin: 0;
   margin-top: -40px;
+  word-break: break-word;
 }
 
 .hero-title h1,
