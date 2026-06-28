@@ -85,6 +85,7 @@ main {
 
 .sim-card {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.5em;
   border: 1px solid #ccc;
