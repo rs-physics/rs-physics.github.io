@@ -129,7 +129,6 @@ main {
   gap: 60px; /* distance between image and text */
   width: 680px;
   max-width: 90vw;
-  overflow: hidden
 }
 
 .hero-image {
@@ -139,7 +138,7 @@ main {
 
 .hero-title h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 4em;
+  font-size: clamp(2rem, 6vw, 4em);
   color: black;
   margin: 0;
   margin-top: -40px;
