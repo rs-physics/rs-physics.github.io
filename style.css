@@ -1,3 +1,4 @@
+/* ==== BASE ==== */
 html {
   overflow-y: scroll;
 }
@@ -9,6 +10,28 @@ body {
   color: #333;
 }
 
+main {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+/* ==== TYPOGRAPHY ==== */
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3em;
+  margin-bottom: 0.2em;
+}
+
+h2, h3 {
+  letter-spacing: 0.03em;
+}
+
+h3 {
+  font-style: italic;
+}
+
+/* ==== HEADER ==== */
 header {
   text-align: center;
   padding: 1em;
@@ -16,12 +39,7 @@ header {
   border-bottom: 2px solid #ddd;
 }
 
-h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 3em;
-  margin-bottom: 0.2em;
-}
-
+/* ==== NAV ==== */
 .menu {
   display: flex;
   justify-content: center;
@@ -34,6 +52,7 @@ h1 {
   font-weight: 700;
   font-size: 0.9em;
   letter-spacing: 1px;
+  flex-wrap: wrap;
 }
 
 .menu a {
@@ -46,43 +65,45 @@ h1 {
   color: #005599;
 }
 
-main {
-  max-width: 800px;
-  margin: 2em auto;
-  padding: 0 1em;
+/* ==== HERO ==== */
+.hero-banner {
+  position: relative;
+  background-color: white;
+  display: flex;
+  justify-content: center;
 }
 
-.intro {
-  text-align: justify;
+.hero-image {
+  display: block;
+  height: 230px;
+  width: auto;
 }
 
-.topic-title {
-  color: var(--topic-color);
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  font-size: 1.3em;
+.hero-image-container {
+  position: relative;
+  display: block;
+  width: 700px;
+  max-width: 90vw;
+  container-type: inline-size;
+  min-height: 100px;
 }
 
-.video-list {
-  list-style: none;
-  padding-left: 1em;
-  margin-bottom: 1.5em;
+.hero-title {
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  transform: translateY(-50%);
 }
 
-.video-list li {
-  margin: 0.3em 0;
+.hero-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 8cqw, 4em);
+  color: black;
+  margin: 0;
+  text-align: right;
 }
 
-.video-list li a {
-  text-decoration: none;
-  color: var(--topic-color);
-  font-weight: 500;
-}
-
-.video-list li a:hover {
-  text-decoration: underline;
-}
-
+/* ==== SIM / QUIZ CARDS ==== */
 .sim-card {
   display: flex;
   flex-wrap: wrap;
@@ -103,15 +124,14 @@ main {
 }
 
 .sim-thumb {
-  height: 150px; /* fixed height */
+  height: 150px;
   width: auto;
   border-radius: 4px;
   object-fit: cover;
 }
 
-
 .sim-link {
-  display: inline-block;
+  display: block;
   margin-top: 0.5em;
   color: #0077cc;
   font-weight: bold;
@@ -122,47 +142,17 @@ main {
   color: #005599;
 }
 
-.hero-banner {
-  background-color: white;
-  padding: 2em 0;
-  display: flex;
-  justify-content: center; /* centers the entire wrapper */
+/* ==== INTRO ==== */
+.intro {
+  text-align: justify;
 }
 
-.hero-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 60px; /* distance between image and text */
-  width: 680px;
-  max-width: 90vw;
-}
-
-.hero-image {
-  height: 230px;
-  width: auto;
-}
-
-.hero-title {
-  min-width: 0;
-  flex-shrink: 1;
-}
-
-.hero-title h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 6vw, 4em);
-  color: black;
-  margin: 0;
-  margin-top: -40px;
-  word-break: break-word;
-}
-
-.hero-title h1,
-h2, h3 {
-  letter-spacing: 0.03em;
-}
-
-h3 {
-  font-style: italic;
+/* ==== TOPIC CARDS ==== */
+.topic-title {
+  color: var(--topic-color);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.3em;
 }
 
 .topic-card {
@@ -196,6 +186,28 @@ h3 {
   margin: 0;
 }
 
+/* ==== VIDEO LIST ==== */
+.video-list {
+  list-style: none;
+  padding-left: 1em;
+  margin-bottom: 1.5em;
+}
+
+.video-list li {
+  margin: 0.3em 0;
+}
+
+.video-list li a {
+  text-decoration: none;
+  color: var(--topic-color);
+  font-weight: 500;
+}
+
+.video-list li a:hover {
+  text-decoration: underline;
+}
+
+/* ==== DETAILS / SUMMARY ==== */
 details summary {
   display: flex;
   align-items: center;
@@ -203,24 +215,48 @@ details summary {
   list-style: none;
   font-family: inherit;
   font-size: 0.8em;
-  font-weight: bold; /* Optional: match your headers */
+  font-weight: bold;
   color: inherit;
   padding: 0.5em 0;
 }
 
 details summary::-webkit-details-marker {
-  display: none; /* Hides default arrow */
+  display: none;
 }
 
-/* Optional: custom arrow */
 details summary::before {
-  content: "▶"; /* Closed state arrow */
+  content: "▶";
   display: inline-block;
   margin-right: 0.5em;
   transition: transform 0.2s ease;
 }
 
 details[open] summary::before {
-  transform: rotate(90deg); /* Open state arrow */
+  transform: rotate(90deg);
 }
 
+/* ==== MOBILE ==== */
+@media (max-width: 480px) {
+  .hero-image {
+    display: none;
+  }
+
+  .hero-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-title {
+    position: static;
+    transform: none;
+    text-align: center;
+    left: 0;
+  }
+
+  .hero-title h1 {
+    text-align: center;
+    font-size: clamp(2rem, 10vw, 4em);
+    margin-top: 0;
+  }
+}
